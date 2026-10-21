@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidad Española para Ciudadanos de LATAM | Machuca Abogados</title>
+    <style>
+        :root {
+            --global-color: #093D51;    /* Color principal */
+            --secondary-color: #BE986E; /* Color secundario */
+            --emphasis-color: #B88A16;  /* Color de énfasis */
+            --text-color: #000000;      /* Texto */
+            --white: #FFFFFF;           /* Blanco */
+            --light-bg: #F4F6F8;        /* Fondo claro */
+            --logo-bg: #F6F6F6;         /* Color exacto del fondo del logo */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        /* Header con el mismo fondo que el logo */
+        header {
+            background-color: var(--logo-bg);
+            color: var(--global-color);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo-container img {
+            height: 55px;
+            width: auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        .cta-header-btn {
+            background-color: #25D366;
+            color: var(--white);
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: background 0.3s;
+        }
+
+        .cta-header-btn:hover {
+            background-color: #128C7E;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(9, 61, 81, 0.88), rgba(9, 61, 81, 0.88)), url('WhatsApp Image 2026-10-21 at 8.00.45 AM.jpg') center/cover no-repeat;
+            color: var(--white);
+            padding: 5rem 5% 4rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.3rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .hero h2 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            color: var(--white);
+        }
+
+        .highlight-box {
+            background-color: rgba(184, 138, 22, 0.25);
+            border-left: 4px solid var(--emphasis-color);
+            padding: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            text-align: left;
+            border-radius: 4px;
+            color: var(--white);
+        }
+
+        .cta-btn-main {
+            background-color: var(--emphasis-color);
+            color: var(--white);
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            transition: transform 0.2s, background 0.3s;
+        }
+
+        .cta-btn-main:hover {
+            background-color: #966f0f;
+            transform: translateY(-2px);
+        }
+
+        /* Container & Sections */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--global-color);
+            font-size: 2rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 60px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            display: block;
+            margin: 0.5rem auto 0;
+        }
+
+        /* Normativa */
+        .normativa-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            background-color: var(--light-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid rgba(190, 152, 110, 0.3);
+            align-items: center;
+        }
+
+        .normativa-grid h3 {
+            color: var(--global-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+        }
+
+        /* Benefits */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .benefit-card {
+            background: var(--white);
+            border: 1px solid #E2E8F0;
+            border-top: 4px solid var(--secondary-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s, border-color 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .benefit-card img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            object-position: top center;
+            border-radius: 6px;
+            margin-bottom: 1.2rem;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-4px);
+            border-top-color: var(--emphasis-color);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        .benefit-card h3 {
+            color: var(--global-color);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Quote Section */
+        .quote-section {
+            background: linear-gradient(rgba(9, 61, 81, 0.9), rgba(9, 61, 81, 0.9)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .quote-section blockquote {
+            font-size: 1.25rem;
+            font-style: italic;
+            max-width: 850px;
+            margin: 0 auto;
+            color: var(--secondary-color);
+        }
+
+        /* Requirements & Advantages */
+        .two-column {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--light-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid rgba(190, 152, 110, 0.2);
+        }
+
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 6px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        }
+
+        .card h3 {
+            color: var(--global-color);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .card ul {
+            list-style-type: none;
+        }
+
+        .card ul li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-color);
+        }
+
+        .card ul li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--emphasis-color);
+            font-weight: bold;
+        }
+
+        /* Footer / Contact */
+        footer {
+            background-color: var(--global-color);
+            color: var(--white);
+            text-align: center;
+            padding: 3.5rem 1.5rem;
+        }
+
+        footer h2 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        footer p {
+            color: var(--white);
+        }
+
+        .whatsapp-footer-btn {
+            background-color: #25D366;
+            color: var(--white);
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 1.5rem;
+            transition: transform 0.2s, background 0.3s;
+        }
+
+        .whatsapp-footer-btn:hover {
+            transform: scale(1.05);
+            background-color: #128C7E;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.6rem; }
+            .hero h2 { font-size: 1.1rem; }
+            .logo-container img { height: 45px; }
+            .benefit-card img { height: 180px; }
+            .card img { height: 200px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo-container">
+            <img src="logo.jpg.jpeg" alt="Machuca Abogados">
+        </div>
+        <a href="https://wa.me/34639214052" class="cta-header-btn" target="_blank">
+            WhatsApp +34 639214052
+        </a>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>¿Eres nacional de un país de América Latina y vives en España?</h1>
+        <h2>Obtén tu nacionalidad española en solo 2 años.</h2>
+        
+        <div class="highlight-box">
+            <p><strong>¿Sabías que...?</strong> Si tienes 2 años de residencia regular en España y eres nacional de un país de América Latina (LATAM), puedes solicitar tu nacionalidad española por residencia.</p>
+        </div>
+
+        <a href="https://wa.me/34639214052" class="cta-btn-main" target="_blank">Solicita tu consulta hoy mismo</a>
+    </section>
+
+    <!-- Marco Legal -->
+    <section class="container">
+        <h2 class="section-title">Normativa y Supuestos</h2>
+        <div class="normativa-grid">
+            <div>
+                <h3>Marco Legal Regulador</h3>
+                <p>La adquisición de la Nacionalidad por Residencia está regulada en el <strong>art. 22 del Código Civil Español</strong>. En el año 2015 se aprobó el <strong>Real Decreto 1004/2015, de 6 de noviembre</strong> (Reglamento regulador) y la <strong>Orden JUS/696/2015 de 16 de abril</strong>, que norma sus aspectos más importantes.</p>
+                <br>
+                <h3>Reducción del Plazo de Residencia</h3>
+                <p>Por norma general, se exigen 10 años de residencia legal continuada. Sin embargo, el plazo se reduce a <strong>solo 2 años</strong> para nacionales de países iberoamericanos, Andorra, Filipinas, Guinea Ecuatorial, Portugal o personas de origen sefardí.</p>
+            </div>
+            <div>
+                <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=800&q=80" alt="Mapa mundial global en azul" class="section-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Beneficios -->
+    <section class="container" style="background-color: var(--light-bg); border-radius: 8px;">
+        <h2 class="section-title">Beneficios de Obtener la Nacionalidad Española</h2>
+        <p style="text-align: center; margin-bottom: 2rem;">Abre tu horizonte hacia Europa y disfruta de ventajas permanentes:</p>
+        
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <img src="Gemini_Generated_Image_tzggxctzggxctzgg.jpg" alt="Sin renovaciones de TIE / NIE - Pasaporte Español">
+                <h3>Sin Renovaciones</h3>
+                <p>Olvídate del NIE, TIE y sus molestas renovaciones continuas.</p>
+            </div>
+            <div class="benefit-card">
+                <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=600&q=80" alt="Reagrupación familiar en España">
+                <h3>Reagrupación Familiar Ágil</h3>
+                <p>Reagrupa a tu esposa, hijos mayores (hasta 26 años) sin demostrar estar a cargo, otras edades demostrar que están a cargo.</p>
+            </div>
+            <div class="benefit-card">
+                <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=600&q=80" alt="Transmisión de nacionalidad a hijos">
+                <h3>Transmisión a Hijos Menores</h3>
+                <p>Transmite la nacionalidad a tus hijos menores rápidamente, incluso si están fuera de España.</p>
+            </div>
+            <div class="benefit-card">
+                <img src="Gemini_Generated_Image_a790wa790wa790wa.jpg" alt="Ciudadanía Española y Derechos Políticos">
+                <h3>Ciudadanía Española y Derechos Políticos</h3>
+                <p>Derecho a ejercer la ciudadanía española: ser elegido y elegir a sus representantes.</p>
+            </div>
+            <div class="benefit-card">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80" alt="Empleo público y laboral">
+                <h3>Empleo Público</h3>
+                <p>Accede y postula a puestos laborales de Empleo Público en España.</p>
+            </div>
+            <div class="benefit-card">
+                <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=600&q=80" alt="Libre circulación por la Unión Europea">
+                <h3>Movilidad en la UE</h3>
+                <p>Derecho a vivir y trabajar libremente en los países miembros de la Unión Europea.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote / Alerta -->
+    <section class="quote-section">
+        <blockquote>
+            «Asegura que tu solicitud de nacionalidad española sea revisada y analizada por expertos, evitando el riesgo de rechazos y problemas legales que podrían costarte aún más».
+        </blockquote>
+    </section>
+
+    <!-- Por qué elegir Machuca Abogados -->
+    <section class="container">
+        <h2 class="section-title">¿Por qué contar con nuestro soporte legal?</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">
+            En <strong>Machuca Abogados</strong> contamos con amplia experiencia en Derecho de Extranjería y tramitación exitosa de solicitudes de Nacionalidad Española. Tras analizar tu caso, solo iniciaremos el trámite si cumples al 100% los requisitos normativos para garantizar el éxito.
+        </p>
+
+        <div class="two-column">
+            <!-- Requisitos -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?auto=format&fit=crop&w=600&q=80" alt="Pasaportes y trámites consulares de nacionalidad">
+                <h3>Requisitos Generales</h3>
+                <ul>
+                    <li>Residencia legal y continuada en España (2 años para ciudadanos de Iberoamérica).</li>
+                    <li>Pasaporte válido y en vigor.</li>
+                    <li>Exámenes DELE y/o CCSE aprobados.</li>
+                    <li>Ausencia de antecedentes penales.</li>
+                    <li>Acta de nacimiento.</li>
+                    <li>NIE en vigor.</li>
+                </ul>
+            </div>
+
+            <!-- Ventajas de Contratarnos -->
+            <div class="card">
+                <img src="Gemini_Generated_Image_24ikx624ikx624ik.jpg" alt="Asesoría personalizada en Machuca Abogados">
+                <h3>Ventajas de Contratarnos</h3>
+                <ul>
+                    <li><strong>Examen CCSE y DELE:</strong> Te guiamos en la inscripción ante el Instituto Cervantes o gestionamos tu solicitud de dispensa si aplica.</li>
+                    <li><strong>Materiales de Estudio:</strong> Te brindamos materiales de examen para que te sientas acompañado durante todo el proceso.</li>
+                    <li><strong>Evita Errores Denegatorios:</strong> Prevenimos errores comunes reflejados en los informes del Ministerio de Justicia.</li>
+                    <li><strong>Garantía de Éxito al 100%:</strong> Tramitación telemática a nivel nacional, asegurando expedientes completos, correctos y en tiempo y forma.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Final -->
+    <footer>
+        <h2>¡Ahorra Tiempo y Dinero!</h2>
+        <p style="max-width: 600px; margin: 0 auto;">Invertir en nuestros servicios te ayudará a evitar costosos errores y retrasos en el proceso de solicitud. ¡Obtén resultados más rápido y sin complicaciones!</p>
+        
+        <a href="https://wa.me/34639214052" class="whatsapp-footer-btn" target="_blank">
+            Contactar por WhatsApp (+34 639214052)
+        </a>
+    </footer>
+
+</body>
+</html>
